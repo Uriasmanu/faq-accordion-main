@@ -27,6 +27,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  background-color: hsl(275, 100%, 97%)
 }
 main {
   display: block;
