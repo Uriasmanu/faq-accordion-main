@@ -6,22 +6,33 @@ import Card from './componentes/Card';
 
 
 const Conteiner = styled.div`
-  max-width: 1440px;
-  width: 115%;
+  width: 100%;
   position: relative;
   z-index: 0;
+  box-sizing: border-box;
+  display: flex;
+
+`
+
+const Caixote  = styled.div`
+   display: flex;
+   justify-content: center;
   
+    
 `
 
 function App() {
 
   return (
-    <Conteiner>
+    <Caixote>
     <EstilosGlobais/>
-    <img src={backgrond} alt="Background" style={{ width: '115%' }}/>
-    
-    <Card/>
+
+    <Conteiner>
+    <img src={backgrond} alt="Background" style={{ width: '215%' }}/>
     </Conteiner>
+    <Card/>
+
+    </Caixote>
   )
 }
 
