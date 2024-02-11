@@ -1,7 +1,7 @@
 import {styled} from  'styled-components';
 import EstilosGlobais from "./componentes/estilosGlobais"
 
-import backgrond from "../public/images/background-pattern-desktop.svg"
+import backgrond from "../public/imagens/background-pattern-desktop.svg"
 import Card from './componentes/Card';
 
 
