@@ -27,7 +27,7 @@ const Button = styled.button`
 const ModeloFaq = ({ titulo, texto }) => {
     const [expandido, setExpandido] = useState(false);
 
-    const toggleExpandido = () => {
+    const mudarExpandido = () => {
         setExpandido(!expandido);
     };
 
@@ -35,7 +35,7 @@ const ModeloFaq = ({ titulo, texto }) => {
         <>
             <ContaineDiv>
                 <h2>{titulo}</h2>
-                <Button onClick={toggleExpandido}>
+                <Button onClick={mudarExpandido}>
                     <img src={expandido ? menos : mais} alt={expandido ? "Menos" : "Mais"} />
                 </Button>
             </ContaineDiv>
