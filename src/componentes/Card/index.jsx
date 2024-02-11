@@ -11,6 +11,13 @@ const CardContainer = styled.div`
     box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
     margin-top: 10%;
     padding: 2%;
+
+    @media (max-width: 768px) {
+        width: 87%;
+        border-radius: 10px;
+        padding: 3%;
+
+    }
 `
 
 const Titulo = styled.div`
