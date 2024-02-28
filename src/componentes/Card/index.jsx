@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import textos from '../Textos/textos.json'
+
 
 const CardContainer = styled.div`
     position: absolute;
@@ -35,8 +35,22 @@ const Titulo = styled.div`
 
 import star from "../../../public/imagens/icon-star.svg"
 import ModeloFaq from '../modeloFaq';
+import { useEffect, useState } from 'react';
 
 const Card = () => {
+    const [textos, setTextos] = useState([]);
+
+    useEffect(() => {
+        fetch('https://my-json-server.typicode.com/Uriasmanu/faq-API/faq')
+            .then(resposta => resposta.json())
+            .then(dados => {
+                setTextos(dados[0]); // Ajuste aqui para acessar o primeiro item do array retornado pela API
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados da API:', error);
+            });
+    }, []); // Coloque [] como segundo argumento para useEffect para garantir que ele só seja executado uma vez durante a montagem
+
     return (
         <CardContainer>
             <Titulo>
@@ -44,9 +58,9 @@ const Card = () => {
                 <h1>{textos.titulo}</h1>
             </Titulo>
 
-           {textos.perguntas.map((faq, index) => (
-            <ModeloFaq key={index} titulo={faq.pergunta} texto={faq.resposta} />
-          ))}
+            {textos.perguntas && textos.perguntas.map((faq, index) => (
+                <ModeloFaq key={index} titulo={faq.pergunta} texto={faq.resposta} />
+            ))}
 
         </CardContainer>
     )
